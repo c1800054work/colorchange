@@ -19,11 +19,11 @@ class ViewController: UIViewController {
     @IBAction func colorSliderChange(_ sender: Any) {
         jakeBackgroundView.backgroundColor = UIColor (red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
         
-        let r = String(format: "%.0f", redSlider.value)
-        let g = String(format: "%.0f", greenSlider.value)
-        let b = String(format: "%.0f", blueSlider.value)
-        let a = String(format: "%.0f", alphaSlider.value)
-        
+        let r = String(format: "%.0f", redSlider.value * 255)
+        let g = String(format: "%.0f", greenSlider.value * 255)
+        let b = String(format: "%.0f", blueSlider.value * 255)
+        let a = String(format: "%.0f", alphaSlider.value * 255)
+
         redLabel.text = "R \(r)"
         greenLabel.text = "G \(g)"
         blueLabel.text = "B \(b)"
@@ -38,9 +38,11 @@ class ViewController: UIViewController {
     @IBAction func redSwitchAction(_ sender: UISwitch) {
         if sender.isOn == false {
             redSlider.isEnabled = false
+            redSlider.minimumTrackTintColor = UIColor.lightGray
             redLabel.isEnabled = false
         } else {
             redSlider.isEnabled = true
+            redSlider.minimumTrackTintColor = UIColor.red
             redLabel.isEnabled = true
         }
     }
@@ -48,9 +50,11 @@ class ViewController: UIViewController {
     @IBAction func greenSwitchAction(_ sender: UISwitch) {
         if sender.isOn == false {
             greenSlider.isEnabled = false
+            greenSlider.minimumTrackTintColor = UIColor.lightGray
             greenLabel.isEnabled = false
         } else {
             greenSlider.isEnabled = true
+            greenSlider.minimumTrackTintColor = UIColor.green
             greenLabel.isEnabled = true
         }
     }
@@ -58,9 +62,11 @@ class ViewController: UIViewController {
     @IBAction func blueSwitchAction(_ sender: UISwitch) {
         if sender.isOn == false {
             blueSlider.isEnabled = false
+            blueSlider.minimumTrackTintColor = UIColor.lightGray
             blueLabel.isEnabled = false
         } else {
             blueSlider.isEnabled = true
+            blueSlider.minimumTrackTintColor = UIColor.blue
             blueLabel.isEnabled = true
         }
     }
@@ -68,9 +74,11 @@ class ViewController: UIViewController {
     @IBAction func alphaSwitchAction(_ sender: UISwitch) {
         if sender.isOn == false {
             alphaSlider.isEnabled = false
+            alphaSlider.minimumTrackTintColor = UIColor.lightGray
             alphaLabel.isEnabled = false
         } else {
             alphaSlider.isEnabled = true
+            alphaSlider.minimumTrackTintColor = UIColor.darkGray
             alphaLabel.isEnabled = true
         }
     }
