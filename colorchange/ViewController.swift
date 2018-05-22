@@ -18,6 +18,16 @@ class ViewController: UIViewController {
     
     @IBAction func colorSliderChange(_ sender: Any) {
         jakeBackgroundView.backgroundColor = UIColor (red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
+        
+        let r = String(format: "%.0f", redSlider.value)
+        let g = String(format: "%.0f", greenSlider.value)
+        let b = String(format: "%.0f", blueSlider.value)
+        let a = String(format: "%.0f", alphaSlider.value)
+        
+        redLabel.text = "R \(r)"
+        greenLabel.text = "G \(g)"
+        blueLabel.text = "B \(b)"
+        alphaLabel.text = "A \(a)"
     }
     
     @IBOutlet weak var redLabel: UILabel!
@@ -74,8 +84,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
-    @IBOutlet weak var colorLabel: UILabel!
-    
 }
 
