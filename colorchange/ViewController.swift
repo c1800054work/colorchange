@@ -18,16 +18,11 @@ class ViewController: UIViewController {
     
     @IBAction func colorSliderChange(_ sender: Any) {
         jakeBackgroundView.backgroundColor = UIColor (red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
-        
-        let r = String(format: "%.0f", redSlider.value * 255)
-        let g = String(format: "%.0f", greenSlider.value * 255)
-        let b = String(format: "%.0f", blueSlider.value * 255)
-        let a = String(format: "%.0f", alphaSlider.value * 255)
 
-        redLabel.text = "R \(r)"
-        greenLabel.text = "G \(g)"
-        blueLabel.text = "B \(b)"
-        alphaLabel.text = "A \(a)"
+        redLabel.text = "R \(String(format: "%.0f", redSlider.value * 255))"
+        greenLabel.text = "G \(String(format: "%.0f", greenSlider.value * 255))"
+        blueLabel.text = "B \(String(format: "%.0f", blueSlider.value * 255))"
+        alphaLabel.text = "A \(String(format: "%.0f", alphaSlider.value * 255))"
     }
     
     @IBOutlet weak var redLabel: UILabel!
