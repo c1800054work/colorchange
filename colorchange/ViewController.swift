@@ -57,7 +57,6 @@ class ViewController: UIViewController {
                 greenSlider.minimumTrackTintColor = UIColor.green
                 greenLabel.isEnabled = true
             }
-            
         case blueSwitch:
             if sender.isOn == false {
                 blueSlider.isEnabled = false
